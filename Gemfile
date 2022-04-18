@@ -13,6 +13,14 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 
+gem 'devise'
+gem 'active_model_serializers', '~> 0.10.0'
+gem 'kaminari'
+gem 'carrierwave'
+gem 'rmagick'
+gem 'pundit'
+gem 'rack-cors'
+gem 'fog-aws'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 
