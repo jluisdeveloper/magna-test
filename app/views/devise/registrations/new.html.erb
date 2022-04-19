@@ -9,6 +9,31 @@
   </div>
 
   <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, placeholder: "Nombres" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, placeholder: "Apellidos" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :dni %><br />
+    <%= f.text_field :dni, placeholder: "DNI" %>
+  </div>
+  
+   <div class="field">
+    <%= f.label :code %><br />
+    <%= f.text_field :code, placeholder: "Codigo" %>
+  </div>
+
+   <div class="field">
+    <%= f.label :rol %><br />
+    <%= f.text_field :role_id, placeholder: "Rol" %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
