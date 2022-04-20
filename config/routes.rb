@@ -28,4 +28,5 @@ Rails.application.routes.draw do
   end
 
   root to: 'pages#index'
+  
 end
