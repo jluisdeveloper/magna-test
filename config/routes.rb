@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     authenticated :user do
       namespace :users do
+        get 'current_user', to: 'dashboard#get_current_user'
         get 'dashboard/index', as: :authenticated_root
       end
     end
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
   devise_scope :admin do
     authenticated :admin do
       namespace :admins do
+        get 'current_admin', to: 'dashboard#get_current_admin'
         get 'dashboard/index', as: :authenticated_root
       end
     end
