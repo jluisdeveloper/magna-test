@@ -1,5 +1,7 @@
 <% if user_signed_in? %>
-  <h2> imprimir panel de usuario</h2>
+  <%= javascript_pack_tag 'user_index' %>
 <% elsif admin_signed_in? %>
-  <h2> imprimir panel de administrador</h2>
+  <%= javascript_pack_tag 'admin_index' %>
+<% else %>
+  <h2> no iniciaste sesion </h2>
 <% end %>
