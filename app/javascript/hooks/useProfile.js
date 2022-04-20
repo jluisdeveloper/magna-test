@@ -21,13 +21,14 @@ const profilePrototype = {
 
 const useProfile = (typeProfile) => {
   const [profile, setProfile] = useState(profilePrototype)
-  const url = typeProfile === 'admin' ? '/admins/current_admin' : '/users/current_user'
+
   useEffect(() => {
     passCsrfToken(document, axios)
     getProfile()
   }, [])
 
   const getProfile = async() => {
+    const url = typeProfile === 'admin' ? '/admins/current_admin' : '/users/current_user'
     await axios.get(url, {}).then(response => {
       setProfile(response.data)
     }).catch(error => {
@@ -35,7 +36,16 @@ const useProfile = (typeProfile) => {
     })
   }
 
-  return { profile }
+  const handleSignOut = async() => {
+    const url = typeProfile === 'admin' ? '/admins/sign_out' : '/users/sign_out'
+    axios.delete(url).then(
+      setTimeout(() => {
+        location.replace("/");
+      }, 800)
+    )
+  }
+
+  return { profile, handleSignOut }
 }
 
 export default useProfile

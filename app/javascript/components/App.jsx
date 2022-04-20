@@ -5,13 +5,12 @@ import useProfile from '../hooks/useProfile';
 const App = ({ typeUser }) => {
   const { profile } = useProfile(typeUser)
 
-  console.log(profile)
-
-  
-
   return (
    <>
-      <Navbar />
+      <Navbar 
+        user = { profile }
+        typeUser = { typeUser }
+      />
    </>
   )
 };
